@@ -98,7 +98,7 @@
     <script>
         let array;
         (async () => {
-            array = await fetch("http://localhost:3000/").then(items => items.json()).catch(() => []).then(res => res).catch(() => [])
+            array = await fetch("https://mercadosbaratos.onrender.com/").then(items => items.json()).catch(() => []).then(res => res).catch(() => [])
             let tabledata = ''
             for (let data in array) {
                 tabledata += '<tr class="table-light">' + array[data].map(td => "<td><p>" + td + "</p></td>").join("") + "</tr>"
