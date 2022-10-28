@@ -26,29 +26,40 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
 
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
 </head>
+<style>
+    @media screen and (max-width: 500px) {
+        table {
+            max-width: 500px !important;
+            overflow: auto;
+        }
+    }
+</style>
 
-<body class="dx-viewport">
+<body class="dx-viewport overflow-scroll">
     <section id="main" class="container">
         <header class="header bg-teal p-3 mb-3">
             <h2 class="fs-1 text-center">Melhores ações seguindo a estratégia do clube </h2>
         </header>
-        <table id="datatable" class="table table-primary">
-            <thead class="">
-                <tr>
-                    <td>Ação</td>
-                    <td>Empresa</td>
-                    <td>Preço</td>
-                    <td>Margem EBIT</td>
-                    <td>P/VPA</td>
-                    <td>EV/EBIT</td>
-                    <td>Div.Yeld Jme Financ.(R$)</td>
-                    <td>Volume Financ.(R$)</td>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="table-responsive justify-content-center">
+            <table id="datatable" class="table table-primary w-100 overflow-scroll">
+                <thead class="">
+                    <tr>
+                        <td>Ação</td>
+                        <td>Empresa</td>
+                        <td>Preço</td>
+                        <td>Margem EBIT</td>
+                        <td>P/VPA</td>
+                        <td>EV/EBIT</td>
+                        <td>Div.Yeld Jme Financ.(R$)</td>
+                        <td>Volume Financ.(R$)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </section>
     <section id="desc" class="container">
         <header class="header bg-teal p-3 mb-3">
@@ -75,7 +86,8 @@
         </header>
         <p class="fs-2 text-justify">
             O clube do valor recentemente publicou duas aulas onde o Ramiro Gomes mostrou como é feita a escolha
-            das ações de seu curso. <strong>SIM</strong>, como é <strong>FEITA</strong> a escolha das ações de seus alunos foi
+            das ações de seu curso. <strong>SIM</strong>, como é <strong>FEITA</strong> a escolha das ações de seus
+            alunos foi
             <strong>disponibilizada</strong> nesses vídeos. Enquanto eles estiverem no ar você pode encontrá-los
             <a target="_blank" href="https://www.youtube.com/watch?v=lmTeLAb-txE&t">Aqui para a aula 1</a>
             e
@@ -114,7 +126,23 @@
         $("#datatable_filter").children("label").text("Procurar:")
 
     </script>
-
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyD131oEce-xvbe5TngOZE2e_woQpQms0V4",
+            authDomain: "mercadosbaratosparacompra.firebaseapp.com",
+            projectId: "mercadosbaratosparacompra",
+            storageBucket: "mercadosbaratosparacompra.appspot.com",
+            messagingSenderId: "337728980890",
+            appId: "1:337728980890:web:34f6e395b8ee839d855c23",
+            measurementId: "G-EE39NBVPR2"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5342394068589739"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
